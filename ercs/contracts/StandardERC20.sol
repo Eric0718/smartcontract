@@ -80,3 +80,15 @@ contract StandardERC20 is ERC20Decimals, ServicePayer {
         return super.decimals();
     }
 }
+
+//useful erc20 contract
+pragma solidity ^0.8.7;
+
+import "../node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract MyToken is ERC20{
+    constructor(uint _totalSuperNum) ERC20("MyToken","MTK") {
+        _mint(msg.sender,_totalSuperNum);
+    }
+
+}
